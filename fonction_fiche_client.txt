@@ -1,0 +1,14 @@
+public JSON fiche_client(String loginLille1)
+	try{
+		Httppost httpost = new HttpPost("10p5.clubinfo.frogeye.fr/api/client/fiche");
+		List<NameValuePair> postParameters = new ArrayList>NameValuePair>();
+		postParameters.add(new BasicNameValuePair("clients", loginLille1));
+		httppost.setEntity(new UrlEncodedFormEntity(postParameters));
+
+		HttpClient httpclient = new DefaultHttpClient();
+		HttpResponse responce = httpclient.execute(httppost);
+		return(responce);
+	} 
+	catch(Exception e) {}
+}
+
